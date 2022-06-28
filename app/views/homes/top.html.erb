@@ -1,0 +1,24 @@
+
+<p id="test">あいうえお</p>
+
+<button type="button" onclick="myfunc()">test</button>
+
+<button type="button" onmouseover="mainfunc()">main</button>
+
+<script>
+var text = document.getElementById("test");
+
+  var myfunc = function(){
+
+  text.innerHTML = "かきくけこ";
+  }
+
+ //マウスカーソルが要素の上にのったとき
+
+ var mainfunc = function(){
+  text.innerHTML = "さしすせそ";
+ }
+ 
+ 
+</script>
+
