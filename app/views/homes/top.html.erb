@@ -3,7 +3,9 @@
 
 <button type="button" onclick="myfunc()">test</button>
 
-<button type="button" onmouseover="mainfunc()">main</button>
+<h3 onmouseover="mainfunc()">main</h3>
+
+<h2 onmouseenter="subfunc()">sub</h2>
 
 <script>
 var text = document.getElementById("test");
@@ -18,7 +20,11 @@ var text = document.getElementById("test");
  var mainfunc = function(){
   text.innerHTML = "さしすせそ";
  }
- 
- 
+
+ var subfunc = function(){
+  text.innerHTML = "たちつてと";
+ }
+
+
 </script>
 
