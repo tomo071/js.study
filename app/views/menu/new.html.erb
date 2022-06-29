@@ -1,2 +1,5 @@
-<h1>Menu#new</h1>
-<p>Find me in app/views/menu/new.html.erb</p>
+<%= form_with model: @menu do |f| %>
+  <%= f.select :genre_id, Genle.all.map { |genre| [genre.name, genre.id] } %>
+  <%= f.text_field :name %>
+  <%= f.text_field :body %>
+<% end %>
