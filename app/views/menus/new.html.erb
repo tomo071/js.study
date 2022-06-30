@@ -1,0 +1,7 @@
+<%= form_with model: @menu do |f| %>
+  <%= f.select :genre_id, Genre.all.map{ |genre| [genre.name, genre.id] } %>
+  <%= f.text_field :name %>
+  <%= f.text_field :body %>
+  <%= f.submit "保存" %>
+<% end %>
+  

@@ -1,0 +1,32 @@
+<% @menus.each do |menu| %>
+  <div>
+    <p onmouseover="mainfunc()"><%= menu.name %></p>
+    <p id="test"><%= menu.genre.name %></p>
+  </div>
+
+  <script>
+  //表示が変わるが最初の要素のみ
+    var text = document.getElementById("test");
+    var mainfunc = function(){
+     text.innerHTML = <%= menu.body %>;
+    }
+  //idを各変更させないといけない？
+  </script>
+  
+<% end %>
+<% @menus.each do |menu| %>
+  <div>
+    <p onmouseover="mainfunc()"><%= menu.name %></p>
+    <p id="test"><%= menu.genre.name %></p>
+  </div>
+
+  <script>
+  //表示が変わるが最初の要素のみ
+    var text = document.getElementById("test");
+    var mainfunc = function(){
+     text.innerHTML = <%= menu.body %>;
+    }
+  //idを各変更させないといけない？
+  </script>
+  
+<% end %>

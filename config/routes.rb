@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'homes/top'
+  get 'menus/new'
+  get 'menus/index'
+  get 'menus/show'
+  get 'menus/edit'
+  root 'homes#top'
   resources :genres, only:[:index,:create,:edit,:upddate,:destoroy]
   resources :menus
 
