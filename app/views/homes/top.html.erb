@@ -1,29 +1,25 @@
-
-
-<ul id="nav">
- <li>メニュー
-  <ul>
-   <li><%= link_to "test1", genres_path %></li>
-   <li><%= link_to "test1", genres_path %></li>
-   <li><%= link_to "test1", genres_path %></li>
-  </ul>
- </li>
-</ul>
+<div class="m-5">
+ <p id="test1">あいうえお</p>
+</div>
+<div class="m-5">
+ <p id="test2">かきくけこ</p>
+</div>
 
 
 <script>
-//プルダウンメニュー（jquery）
-//jquery適応できていない？
-$(function() {
- $('#nav li').mouseover(function(e) {
-  $('ul', this).stop().slideDown('fast');
- })
- .mouseout(function(e) {
-  $('ul', this).stop().slideUp('fast');
+var text1 = document.getElementById("test1");
+
+var text2 = document.getElementById("test2");
+ $('#test1').click(function(){
+  text1.innerHTML = "aiueo";
  });
-});
+
+ $('#test2').on('mouseover', function() {
+  text2.innerHTML = "kakikukeko";
+ })
 
 </script>
 
+<%= link_to "new_menu", new_menu_path %>
 
 

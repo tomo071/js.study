@@ -1,2 +1,30 @@
-<h1>Menus#show</h1>
-<p>Find me in app/views/menus/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class=col-12>
+      <button id="name" >name</button>
+      <button id="body" >body</button>
+      <button id="genre" >genre</button>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <h1 id="menu"><%= @menu.name %></h1>
+    </div>
+  </div>
+</div>
+
+<script>
+
+var text =document.getElementById("menu")
+  $("#name").click(function() {
+    text.innerHTML  = "<%= @menu.name %>";
+  });
+
+  $("#body").click(function() {
+    text.innerHTML  = "<%= @menu.body %>";
+  });
+
+  $("#genre").click(function() {
+    text.innerHTML  = "<%= @menu.genre.name %>";
+  });
+</script>

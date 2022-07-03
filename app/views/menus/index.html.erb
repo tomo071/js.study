@@ -1,16 +1,25 @@
-<% @menus.each do |menu| %>
+<div class="m-2">
+  <% @menus.each do |menu| %>
   <div>
-    <p onmouseover="mainfunc()"><%= menu.name %></p>
+    <p><%= menu.name %></p>
     <p id="test"><%= menu.genre.name %></p>
+    <p id="main"></p>
   </div>
 
   <script>
   //表示が変わるが最初の要素のみ
-    var text = document.getElementById("test");
-    var mainfunc = function(){
-     text.innerHTML = <%= menu.body %>;
-    }
+    var text = document.getElementById("main");
+    var i = 0
+
+    i = i + 1
+
+     $('#test').click(function(){
+      text.innerHTML = "<%= menu.body %>";
+     });
+
+     .writeMsg(i)
   //idを各変更させないといけない？
   </script>
-
 <% end %>
+</div>
+
