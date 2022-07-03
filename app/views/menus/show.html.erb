@@ -4,6 +4,8 @@
       <button id="name" >name</button>
       <button id="body" >body</button>
       <button id="genre" >genre</button>
+      <button id="link" >link</button>
+      <button id="delete">delete</button>
     </div>
   </div>
   <div class="row">
@@ -16,6 +18,13 @@
 <script>
 
 var text =document.getElementById("menu")
+
+const Original = "<%= @menu.name %>";
+
+const test = function(){
+  text.innerHTML  = "hoge";
+}
+
   $("#name").click(function() {
     text.innerHTML  = "<%= @menu.name %>";
   });
@@ -27,4 +36,13 @@ var text =document.getElementById("menu")
   $("#genre").click(function() {
     text.innerHTML  = "<%= @menu.genre.name %>";
   });
+
+  //変数名で指定することもできる
+  $("#delete").click(test)
+
+  //リンクはダメっぽい
+  $("#link").click(function() {
+    text.innerHTML  = "<%= link_to "top", root_path %>";
+  });
+
 </script>
