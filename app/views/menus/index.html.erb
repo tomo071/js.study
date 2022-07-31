@@ -1,24 +1,55 @@
-<div class="m-2">
-  <% @menus.each do |menu| %>
-  <div>
-    <p><%= menu.name %></p>
-    <p id="test"><%= menu.genre.name %></p>
-    <p id="main"></p>
+
+  <div id="menu">
+    <div>
+      <% @menus.each do |menu| %>
+        <p id="sidemenu"><%= menu.genre.name %></p>
+      <% end %>
+    </div>
+    <div id="menu_button">open</div>
+    <div class="clear"></div>
   </div>
+<script>
+$(function(){
+var open = 'open'
+var close = 'close'
 
-  <script>
-  //表示が変わるが最初の要素のみ
-    var text = document.getElementById("main");
-    var i = 0
+const menu = '#menu'
+
+const sidemenu = '#sidemenu'
 
 
 
-     $('#test').click(function(){
-      text.innerHTML = "<%= menu.body %>";
-     });
-  //要素内にテキストが入ってなくても使える
-  //idを各変更させないといけない？
-  </script>
-<% end %>
-</div>
+var width = 300
+
+var speed = 300
+//each だと機能しない？（表示されたままになる）
+
+//buttonの表示は変わる
+  $('#menu_button').click(function(){
+    if($(menu).hasClass('active')){
+      $(menu).stop().animate({left:'-'+width+'px'},speed).removeClass('active');
+      $('#menu_button').html(close);
+    }else{
+      $(menu).stop().animate({left:'0'},speed).addClass('active');
+      $('#menu_button').html(open);
+    };
+  });
+
+  var windowHeight = $(window).height();
+
+  $(sidemenu).height(windowHeight);
+  var timer = false;
+  $(window).resize(function() {
+    if (timer !== false) {
+    clearTimeout(timer);
+    }
+    timer = setTimeout(function() {
+      windowHeight = $(window).height();
+    $(sidemenu).height(windowHeight);
+    }, 50);
+  });
+});
+</script>
+
+
 
