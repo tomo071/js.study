@@ -1,8 +1,8 @@
 
   <div id="menu">
-    <div>
+    <div id="sidemenu">
       <% @menus.each do |menu| %>
-        <p id="sidemenu"><%= menu.genre.name %></p>
+        <p><%= menu.genre.name %></p>
       <% end %>
     </div>
     <div id="menu_button">open</div>
@@ -33,20 +33,6 @@ var speed = 300
       $(menu).stop().animate({left:'0'},speed).addClass('active');
       $('#menu_button').html(open);
     };
-  });
-
-  var windowHeight = $(window).height();
-
-  $(sidemenu).height(windowHeight);
-  var timer = false;
-  $(window).resize(function() {
-    if (timer !== false) {
-    clearTimeout(timer);
-    }
-    timer = setTimeout(function() {
-      windowHeight = $(window).height();
-    $(sidemenu).height(windowHeight);
-    }, 50);
   });
 });
 </script>
